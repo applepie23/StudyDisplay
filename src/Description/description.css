@@ -1,0 +1,23 @@
+.description{
+    margin-top: none;
+    color: black;
+    width: auto;
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    display:flex;
+    background-color:rgb(189, 184, 184);
+    align-items: center;
+    justify-content: center;
+}
+
+.text{
+    height:auto;
+    width:70%;
+    border:3px solid black;
+    margin: 30px;
+    background-color: white;
+    padding: 20px;
+}

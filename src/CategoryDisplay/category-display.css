@@ -1,0 +1,82 @@
+.display-container{
+    margin-top: none;
+    color: black;
+    width: auto;
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    display:flex;
+    background-color:rgb(179, 193, 231);
+    flex-direction: column;
+    height: 650px;
+}
+
+.forms-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.main-title{
+    font-size: 30px;
+    width: 300px;
+    border: 3px solid black;
+}
+
+.categories-container{
+    display: flex;
+    height: 600px;
+    overflow-x: scroll;
+    
+}
+
+.one-category-container{
+    border: 3px solid black;
+    margin: 30px;
+    min-height: 275px;
+    min-width: 400px;
+    
+}
+
+.days-container{
+    font-size: 12px;
+    margin: 15px;
+}
+
+.day-checkbox{
+    font-size: 12px;
+    margin: 3px;
+}
+
+.time{
+    font-size: 12px;
+    margin: 10px;
+}
+
+.time-container{
+    margin:15px;
+}
+
+.classes-title{
+    margin: 15px;
+}
+
+.classes-container{
+    border: 2px black solid;
+    margin: 20px;
+    overflow-y: scroll;
+    min-height: 220px;
+    max-height: 220px;
+}
+
+.one-class-display{
+    display:flex;
+    flex-direction: row;
+    font-size: 15px;
+}
+
+.class-info{
+    margin: 10px;
+}

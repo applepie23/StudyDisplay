@@ -1,4 +1,5 @@
 import React from 'react'
+import './footer.css'
 
 class Footer extends React.Component {
     constructor(){
@@ -7,7 +8,7 @@ class Footer extends React.Component {
 
     render(){
         return(
-            <div>
+            <div class="footer">
                 <p>I am the Footer</p>
 
 

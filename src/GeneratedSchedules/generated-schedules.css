@@ -1,0 +1,27 @@
+.schedules-container{
+    margin-top: none;
+    color: black;
+    width: auto;
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    display:flex;
+    background-color: rgb(189, 184, 184);
+    flex-direction: column;
+    height: 500px;
+}
+
+.schedule{
+    min-height: 350px;
+    min-width: 350px;
+    border: 2px solid black;
+    margin: 30px;
+}
+
+.schedule-container{
+    display: flex;
+    height: 500px;
+    overflow-x: scroll;
+}

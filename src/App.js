@@ -1,35 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './Header'
-import Location from './Location'
-import Calendar from './Calendar'
-import Footer from './Footer'
+import Header from './Header/Header'
+import Description from './Description/Description'
+import CategoryDisplay from './CategoryDisplay/CategoryDisplay'
+import GeneratedSchedules from './GeneratedSchedules/GeneratedSchedules'
+import Footer from './Footer/Footer'
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Location />
-      <Calendar />
+      <Description />
+      <CategoryDisplay />
+      <GeneratedSchedules />
       <Footer />
     </div>
   );
 }
-/*
-<header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-*/
+
 
 export default App;

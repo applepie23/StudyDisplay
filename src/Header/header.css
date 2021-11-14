@@ -1,0 +1,46 @@
+.header{
+    margin-top: none;
+    color: black;
+    width: auto;
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    display:flex;
+    background-color:rgb(179, 193, 231);
+    align-items: center;
+}
+
+.name{
+    top: 0%;
+    font-size: 60px;
+    width:auto;
+    left:0px;
+    margin:20px;
+    margin-left: 50px;
+}
+
+.extra{
+    font-size: 20px;
+    width:auto;
+    left:0px;
+    margin-top:25px;
+}
+
+.navigation{
+    display:flex;
+    text-align:center; 
+    margin-left: auto;
+    align-items: center;
+}
+
+.navbut{
+    border: 2px solid rgba(170, 50, 220, .6);
+    margin-right: 30px;
+    width:120px;
+    height: 50px;
+    text-align:center; 
+    align-items: center;
+    line-height:50px;
+}
