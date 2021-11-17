@@ -10,7 +10,7 @@
     display:flex;
     background-color:rgb(179, 193, 231);
     flex-direction: column;
-    height: 650px;
+    height: 750px;
 }
 
 .forms-container{
@@ -67,8 +67,8 @@
     border: 2px black solid;
     margin: 20px;
     overflow-y: scroll;
-    min-height: 220px;
-    max-height: 220px;
+    min-height: 165px;
+    max-height: 165px;
 }
 
 .one-class-display{
