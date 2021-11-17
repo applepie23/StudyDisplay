@@ -8,7 +8,13 @@ class CategoryDisplay extends React.Component {
         this.state = {
             categorynameinput: "Add Category Name...",
             cat_num: 3,
-            categorynames: ["One", "Two", "Three"]
+            categorynames: ["French", "WGS", "EECS"],
+            children: [],
+            num_classes: 3,
+            classes: [["C1", "C1", "C1"], ["C2", "C2", "C2"], ["C3", "C3", "C3"]],
+            starttimes: [["01:00", "01:00", "01:00"], ["02:00", "02:00", "02:00"], ["03:00", "03:00", "03:00"]],
+            endtimes: [["01:50", "01:50", "01:50"], ["02:50", "02:50", "02:50"], ["03:50", "03:50", "03:50"]],
+            days: [[["M", "M"], ["M", "M"],["M"]], [["T", "T"], ["T", "T"],["T"]], [["W", "W"], ["W", "W"],["W"]]]
         }
         this.onSubmitAddCategory = this.onSubmitAddCategory.bind(this)
         this.onChangeAddCategory = this.onChangeAddCategory.bind(this)
@@ -18,13 +24,14 @@ class CategoryDisplay extends React.Component {
 
     removeCategory(event){
         const target = event.target
-        const id = target.id
+        const number = target.number
         const newnames = this.state.categorynames
-        newnames.splice(id, 1)
+        newnames.splice(number, 1)
         this.setState((prevState, props) => ({
             cat_num: prevState.cat_num - 1,
             categorynames: newnames
         }))
+        ReactDOM.unmountComponentAtNode(this.getElementById("cat_"+number));
         alert(this.state.categorynames)
     }
 
@@ -44,10 +51,13 @@ class CategoryDisplay extends React.Component {
         })    
     }
 
+
+
     render(){
         const children = [];
         for (var i = 0; i < this.state.cat_num; i += 1) {
-            children.push(<div class="one-category-container"> <CategoryX id={i} number={i} categorynameinput={this.state.categorynames[i]} removeCategory={this.removeCategory} /> </div>);
+            children.push(<div class="one-category-container"> <CategoryX id={"cat_"+i} number={i} categorynameinput={this.state.categorynames[i]} removeCategory={this.removeCategory} /> </div>);
+            
         };
         
         return(
@@ -244,119 +254,6 @@ class CategoryX extends React.Component {
         )
     }
 };
-
-class AddClass extends React.Component {
-    constructor(props){
-        super()
-        this.state ={
-            classname: "Add class name...",
-            monday: false, 
-            tueday: false,
-            wednesday: false,
-            thursday: false,
-            friday: false,
-        }
-        this.onChangeAddDays = this.onChangeAddDays.bind(this)
-        this.onChangeAddClassName = this.onChangeAddClassName.bind(this)
-        this.onSubmitAddClass = this.onSubmitAddClass.bind(this)
-    }
-
-    onChangeAddDays(event){
-        const target = event.target
-        const value = target.checked
-        const name = target.name
-        this.setState({
-            [name]: value
-        })
-    }
-
-    onChangeAddClassName(event){
-        const target = event.target
-        const value = target.value
-        const name = target.name
-        this.setState({
-            [name]: value
-        })
-    }
-
-    onSubmitAddClass(event){
-        const alertString = "class name is " + this.state.classname
-        
-
-        alert(alertString)
-    }
-
-    render(){
-        return(
-            <div>
-                    Add Class to {this.props.name} Category 
-                    <div>
-                        <form onSubmit={this.onSubmitAddClass} class="forms-container">
-                            <label>
-                                Name of Class: 
-                                <input type="text" name="classname" value={this.state.classname} onChange={this.onChangeAddClassName}/>
-                            </label>
-
-                            <div class="days-checkbox">
-                                <label class="day-checkbox"> Monday
-                                    <input type="checkbox" name="monday" checked={this.state.monday} onChange={this.onChangeAddDays}/>
-                                </label>
-                                <label class="day-checkbox"> Tuesday
-                                    <input type="checkbox" name="tuesday" checked={this.state.tuesday} onChange={this.onChangeAddDays}/>
-                                </label>
-                                <label class="day-checkbox"> Wednesday
-                                    <input type="checkbox" name="wednesday" checked={this.state.wednesday} onChange={this.onChangeAddDays}/>
-                                </label>
-                                <label class="day-checkbox">Thursday
-                                    <input type="checkbox" name="thursday" checked={this.state.thursday} onChange={this.onChangeAddDays}/>
-                                </label>
-                                <label class="day-checkbox">Friday
-                                    <input type="checkbox" name="friday" checked={this.state.friday} onChange={this.onChangeAddDays}/>
-                                </label>
-                            </div>
-
-                            <div class="time-container">
-                                <label class="time"> Start Time
-                                    <input type="time"/>
-                                </label>
-                                <label class="time"> End Time
-                                    <input type="time"/>
-                                </label>
-                            </div>
-
-                            <input type="submit" value="Add Class" />
-                            
-                        </form>
-                    </div>
-
-            </div>
-        )
-    }
-};
-
-class DisplayedClasses extends React.Component{
-    constructor(props){
-        super()
-    }
-
-    render(){
-        const children = []
-        for (var i = 0; i < this.props.num_classes; i += 1) {
-            children.push(<OneClass id={i} number={i} classname={this.props.classes[i]} />);
-        };
-
-
-
-        return(
-            <div>
-                    <div class="classes-title">Classes in {this.props.categoryname}</div>
-                    <div class="classes-container">
-                        {children}
-                    </div>
-            </div>
-        )
-    }
-}
 
 class OneClass extends React.Component{
     constructor(props){
