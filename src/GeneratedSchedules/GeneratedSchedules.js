@@ -1,5 +1,6 @@
 import React from 'react'
 import './generated-schedules.css'
+import CategoryDisplay from '../CategoryDisplay/CategoryDisplay'
 
 class GeneratedSchedules extends React.Component {
     constructor(){
@@ -12,6 +13,9 @@ class GeneratedSchedules extends React.Component {
                     <p class="title">
                         Schedules
                     </p>
+
+                    <div>DATA:</div>
+
                     <div class="schedule-container">
                         <div class="schedule">
                             <Schedule />
